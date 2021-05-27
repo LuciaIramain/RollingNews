@@ -91,6 +91,7 @@ const DetalleNoticia = () => {
                 participará el ministro de Economía argentino, <b>Martín Guzmán.</b>
               </p>
             </h3>
+            <h3>copyright &copy; RollingNews.com</h3>
           </div>
         </div>
       </Container>
