@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Inicio from './components/common/Inicio';
-import DetalleNoticia from './components/Noticias/DetalleNoticia';
-=======
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -18,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Admin from './components/administracion/Admin';
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
+import Inicio from './components/common/Inicio';
+import DetalleNoticia from './components/Noticias/DetalleNoticia';
 
 import Actualidad from "./components/paginaPrincipal/Actualidad";
 import Deportes from "./components/paginaPrincipal/Deportes";
@@ -27,7 +16,6 @@ import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import NuevaNoticia from './components/administracion/NuevaNoticia';
 import EditarNoticia from './components/administracion/EditarNoticia';
->>>>>>> c52de65e4d1e63aa4ff6f73e72a95c08e5a02d8b
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
