@@ -15,8 +15,9 @@ import PropagandaCovid from "../common/PropagandaCovid";
 const PaginaPrincipal = () => {
   return (
     <>
-      
+ <PropagandaCovid></PropagandaCovid>
       <Destacado />
+
       <Actualidad />
       <Deportes />
       <Tecnologia />

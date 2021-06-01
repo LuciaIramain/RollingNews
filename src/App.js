@@ -15,6 +15,8 @@ import Economia from './components/paginaPrincipal/Economia';
 import Salud from './components/paginaPrincipal/Salud';
 import Fotografia from './components/paginaPrincipal/Fotografia';
 
+import AcercaNosotros from './components/acercaDeNosotros';
+
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import NuevaNoticia from "./components/administracion/NuevaNoticia";
@@ -44,7 +46,7 @@ function App() {
   return (
     <Router>
       <Navegacion></Navegacion>
-      <PropagandaCovid></PropagandaCovid>
+
       <Switch>
         <Route exact path="/">
           <PaginaPrincipal noticias={noticias} consultarAPI={consultarAPI} />
@@ -93,6 +95,9 @@ function App() {
         </Route>
         <Route exact path="/fotografia">
           <Fotografia consultarAPI={consultarAPI} noticias={noticias}></Fotografia>
+        </Route>
+        <Route exact path="/acercaDeNosotros">
+        <AcercaNosotros></AcercaNosotros>
         </Route>
       </Switch>
       <Footer></Footer>
