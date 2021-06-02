@@ -5,6 +5,7 @@ import '../../App.css';
 import PropagandaCovid from "../common/PropagandaCovid";
 import CadaCategoria from "../paginaPrincipal/CadaCategoria";
 
+
 const PaginaPrincipal = (props) => {
 
 
@@ -32,7 +33,7 @@ const PaginaPrincipal = (props) => {
 
   return (
     <>
-      <Destacado />
+      <Destacado id="#destacado"/>
       
       <CadaCategoria categoria="actualidad" noticias={tresActualidad}></CadaCategoria>
       <CadaCategoria categoria="deportes" noticias={tresDeporte}></CadaCategoria>
