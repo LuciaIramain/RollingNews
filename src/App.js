@@ -16,6 +16,7 @@ import Salud from './components/paginaPrincipal/Salud';
 import Fotografia from './components/paginaPrincipal/Fotografia';
 
 import AcercaNosotros from './components/acercaDeNosotros';
+import Contacto from './components/contacto';
 
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
@@ -98,6 +99,9 @@ function App() {
         </Route>
         <Route exact path="/acercaDeNosotros">
         <AcercaNosotros></AcercaNosotros>
+        </Route>
+        <Route exact path="/contacto">
+        <Contacto></Contacto>
         </Route>
       </Switch>
       <Footer></Footer>

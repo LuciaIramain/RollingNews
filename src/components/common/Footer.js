@@ -13,12 +13,12 @@ import "../../App.css";
 const Footer = () => {
   return (
     <>
-      <div className="d-flex justify-content-between bg-dark   py-4    text-light">
+      <div className="d-flex justify-content-between bg-dark   py-4  footer-end  text-light">
         <div className="d-flex flex-column ml-4">
           <h4 className="text-center titulo-covid">Rolling News</h4>
           &copy; Todos los derechos reservados
           <Link exact={true} to="/acercaDeNosotros" className="nav-link">ACERCA DE NOSOTROS</Link>
-          <Link className="nav-link">CONTACTO</Link>
+          <Link exact={true} to="/contacto" className="nav-link">CONTACTO</Link>
         </div>
         <div className="mr-4 ">
           <h4 className="text-center titulo-covid">Contacto</h4>

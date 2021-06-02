@@ -10,9 +10,11 @@ const Economia = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4 text-center">Economía</h1>
+      <div className="container">
+        <h1 className="mx-3 my-4 titulo-categoria text-center text-light">Economía</h1>
+      </div>
       <section className="d-flex justify-content-center">
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Dolares}/>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -23,7 +25,7 @@ const Economia = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Cosecha} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -34,7 +36,7 @@ const Economia = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Siembra} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>

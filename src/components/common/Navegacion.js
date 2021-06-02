@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Form, NavDropdown, Button, Modal } from "react-bootstrap";
-import { NavLink} from "react-router-dom";
+import {
+  Navbar,
+  Nav,
+  Form,
+  NavDropdown,
+  Button,
+  Modal,
+  Col,
+} from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "./Navegacion.css";
-
 
 const Navegacion = () => {
   const [showSus, setShowSus] = useState(false);
@@ -16,7 +23,6 @@ const Navegacion = () => {
   return (
     <div className="margin-t-b">
       <Navbar
-
         bg="dark"
         variant="dark"
         expand="lg"
@@ -41,16 +47,20 @@ const Navegacion = () => {
             </NavLink>
 
             <NavDropdown title="Mas Secciones" id="basic-nav-dropdown">
-              <NavLink exact={true}  to="/espectaculos" className="dropdown-item">
+              <NavLink
+                exact={true}
+                to="/espectaculos"
+                className="dropdown-item"
+              >
                 Espectáculos
               </NavLink>
-              <NavLink exact={true}  to="/economia" className="dropdown-item">
+              <NavLink exact={true} to="/economia" className="dropdown-item">
                 Economía
               </NavLink>
-              <NavLink exact={true}  to="/salud" className="dropdown-item">
+              <NavLink exact={true} to="/salud" className="dropdown-item">
                 Salud
               </NavLink>
-              <NavLink exact={true}  to="/fotografia" className="dropdown-item">
+              <NavLink exact={true} to="/fotografia" className="dropdown-item">
                 Fotografía
               </NavLink>
             </NavDropdown>
@@ -103,12 +113,28 @@ const Navegacion = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Ingresa tu Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
-              <Form.Text className="text-muted">
-                No compartiremos tu dirección de email con nadie.
-              </Form.Text>
+            <Form.Row>
+              <Col>
+                <Form.Control placeholder="Nombre" />
+              </Col>
+              <Col>
+                <Form.Control placeholder="Apellido" />
+              </Col>
+            </Form.Row>
+            <Form.Group controlId="formGridAddress1" className="py-2">
+              <Form.Control placeholder="Dirección" />
+            </Form.Group>
+            <Form.Group controlId="formGridCity">
+              <Form.Control placeholder="Localidad" />
+            </Form.Group>
+            <Form.Group controlId="formGridZip">
+              <Form.Control placeholder="Código Postal" />
+            </Form.Group>
+            <Form.Group controlId="formGridNumber">
+              <Form.Control placeholder="Teléfono" />
+            </Form.Group>
+            <Form.Group controlId="formGridEmail">
+              <Form.Control type="email" placeholder="Ingresa tu Email" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Enviar
@@ -117,9 +143,7 @@ const Navegacion = () => {
         </Modal.Body>
       </Modal>
     </div>
-
   );
-
 };
 
 export default Navegacion;

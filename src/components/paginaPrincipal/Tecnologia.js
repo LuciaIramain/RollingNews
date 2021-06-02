@@ -8,9 +8,11 @@ const Tecnologia = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4 text-center">Tecnologia</h1>
+      <div className="container">
+        <h1 className="mx-3 my-4 titulo-categoria text-center text-light">Tecnología</h1>
+      </div>
       <section className="d-flex justify-content-center">
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Iphone}/>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -21,7 +23,7 @@ const Tecnologia = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Macbook} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -32,7 +34,7 @@ const Tecnologia = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={Trading} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>

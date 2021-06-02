@@ -4,14 +4,19 @@ import Albertofernandez from "../img/actualidad/albertofernandez.jpg";
 import Colombianos from "../img/actualidad/colombianos.jpg";
 import Aeropuerto from "../img/actualidad/aeropuerto.jpg";
 
-
 const Actualidad = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4 text-center">Actualidad</h1>
+      <div className="container">
+        <h1 className="mx-3 my-4 titulo-categoria text-center text-light">Actualidad</h1>
+      </div>
+
       <section className="d-flex justify-content-center">
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: "18rem" }}>
+        <Card
+          className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp"
+          style={{ width: "18rem" }}
+        >
           <Card.Img variant="top" src={Albertofernandez} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -22,7 +27,10 @@ const Actualidad = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: "18rem" }}>
+        <Card
+          className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp"
+          style={{ width: "18rem" }}
+        >
           <Card.Img variant="top" src={Colombianos} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -33,7 +41,10 @@ const Actualidad = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: "18rem" }}>
+        <Card
+          className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp"
+          style={{ width: "18rem" }}
+        >
           <Card.Img variant="top" src={Aeropuerto} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
