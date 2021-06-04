@@ -14,7 +14,7 @@ import CadaCategoria from "./components/paginaPrincipal/CadaCategoria";
 import AcercaNosotros from './components/acercaDeNosotros';
 import Contacto from './components/contacto';
 
-import DetalleNoticia from "./components/noticias/DetalleNoticia";
+import DetalleNoticia from "./components/Noticias/DetalleNoticia";
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
