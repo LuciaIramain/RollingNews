@@ -12,7 +12,7 @@ import NuevaNoticia from './components/administracion/NuevaNoticia';
 import EditarNoticia from './components/administracion/EditarNoticia';
 import CadaCategoria from "./components/paginaPrincipal/CadaCategoria";
 import AcercaNosotros from './components/acercaDeNosotros';
-import Contacto from './components/contacto';
+import Contacto from './components/Contactos';
 
 import DetalleNoticia from "./components/noticias/DetalleNoticia";
 

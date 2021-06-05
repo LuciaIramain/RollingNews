@@ -7,19 +7,30 @@ import CadaCategoria from "../paginaPrincipal/CadaCategoria";
 
 
 const PaginaPrincipal = (props) => {
-
-
+  
   const tresNoticias = (categoria) => {
     let contador = 0;
     const arregloTresNoticias = [];
     for (const i in props.noticias) {
-      if ((props.noticias[i].categoria === categoria) && (contador < 3) && props.noticias[i].tituloNoticia !== "Este item es una categoria") {
+      if ((props.noticias[props.noticias.length-1-i].categoria === categoria) && (contador < 3) && props.noticias[props.noticias.length-1-i].tituloNoticia !== "Este item es una categoria") {
         contador++;
-        arregloTresNoticias.unshift(props.noticias[i]);
+        arregloTresNoticias.push(props.noticias[props.noticias.length-1-i]);
       }
     }
 
     return arregloTresNoticias;
+  }
+  const tresNoticiasPrincipal = () => {
+    let contador = 0;
+    const arregloTresNoticiasPrincipal = [];
+    for (const i in props.noticias) {
+      if ((contador < 3) && props.noticias[props.noticias.length-1-i].tituloNoticia !== "Este item es una categoria") {
+        contador++;
+        arregloTresNoticiasPrincipal.push(props.noticias[props.noticias.length-1-i]);
+      }
+    }
+
+    return arregloTresNoticiasPrincipal;
   }
   let tresActualidad = tresNoticias("actualidad");
   let tresDeporte = tresNoticias("deportes");
@@ -29,12 +40,12 @@ const PaginaPrincipal = (props) => {
   let tresEconomia=tresNoticias("economia");
   let tresSalud=tresNoticias("salud");
   let tresFotografia=tresNoticias("fotografia");
-
+  let tresPrincipal = tresNoticiasPrincipal();
 
   return (
     <>
     <PropagandaCovid></PropagandaCovid>
-      <Destacado id="#destacado"/>
+      <Destacado id="#destacado" noticias={tresPrincipal}/>
       
       <CadaCategoria categoria="actualidad" noticias={tresActualidad}></CadaCategoria>
       <CadaCategoria categoria="deportes" noticias={tresDeporte}></CadaCategoria>

@@ -9,10 +9,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
 
-
-
-
-
 const Admin = (props) => {
     const URL = process.env.REACT_APP_API_URL;
     const cadaCategoria = [];
@@ -67,9 +63,6 @@ const Admin = (props) => {
         descripcionNoticia: "",
         cuerpoNoticia: "",
     };
-
-
-
 
     //enviar objetoa la api, operacion POST
     try {

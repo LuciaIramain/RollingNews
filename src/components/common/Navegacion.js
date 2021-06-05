@@ -3,9 +3,50 @@ import { Navbar, Nav, Form, NavDropdown, Button, Modal, Col } from "react-bootst
 import { NavLink } from "react-router-dom";
 import "./Navegacion.css";
 
+import { campoRequerido } from "../administracion/Validaciones";
 import Swal from 'sweetalert2';
 
 const Navegacion = () => {
+  //Suscripcion
+  const [nombreSuscripcion, setNombreSuscripcion] = useState("");
+  const [apellidoSuscripcion, setApellidoSuscripcion] = useState("");
+  const [direccionSuscripcion, setDireccionSuscripcion] = useState("");
+  const [localidadSuscripcion, setLocalidadSuscripcion] = useState("");
+  const [codigoPostalSuscripcion, setCodigoPostalSuscripcion] = useState("");
+  const [telefonoSuscripcion, setTelefonoSuscripcion] = useState("");
+  const [emailSuscripcion, setEmailSuscripcion] = useState("");
+  
+  const enviarDatosSuscripcion = (e) => {
+    e.preventDefault();
+    
+    if (
+        campoRequerido(nombreSuscripcion) &&
+        campoRequerido(apellidoSuscripcion) &&
+        campoRequerido(direccionSuscripcion) &&
+        campoRequerido(localidadSuscripcion) &&
+        campoRequerido(codigoPostalSuscripcion) &&
+        campoRequerido(telefonoSuscripcion) &&
+        campoRequerido(emailSuscripcion) ) {
+
+        Swal.fire(
+            'Suscripcion Exitosa',
+            'Enviaemos periodicamente a su mail noticias de su interes',
+            'success'
+        )
+    } else {
+        Swal.fire(
+            'Suscripcion fallida',
+            'Por favor complete todos los campos',
+            'warning'
+        )
+        
+    }
+    handleCloseSus();
+};
+
+
+
+
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [showSus, setShowSus] = useState(false);
@@ -13,7 +54,7 @@ const Navegacion = () => {
   const handleShowSus = () => {
     setShowSus(true);
   }
-  const [sesionAbierta, setSesionAbierta] = useState();
+  const [sesionAbierta, setSesionAbierta] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => {
@@ -61,15 +102,7 @@ const Navegacion = () => {
     setSesionAbierta(false);
     handleClose();
   }
-  const exitoSuscripcion=(e)=>{
-    e.preventDefault();
-    
-    Swal.fire(
-      'Suscripto',
-      'Sus datos fueron registrados, nos pondremos en contacto con usted',
-      'success'
-    )
-  }
+  
   return (
     <div className="margin-t-b">
       <Navbar
@@ -169,31 +202,31 @@ const Navegacion = () => {
           <Modal.Title>Suscríbete</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={enviarDatosSuscripcion}>
             <Form.Row>
               <Col>
-                <Form.Control placeholder="Nombre" />
+                <Form.Control required placeholder="Nombre" onChange={(e)=>setNombreSuscripcion(e.target.value)}/>
               </Col>
               <Col>
-                <Form.Control placeholder="Apellido" />
+                <Form.Control placeholder="Apellido" required onChange={(e)=>setApellidoSuscripcion(e.target.value)}/>
               </Col>
             </Form.Row>
             <Form.Group controlId="formGridAddress1" className="py-2">
-              <Form.Control placeholder="Dirección" />
+              <Form.Control placeholder="Dirección" required onChange={(e)=>setDireccionSuscripcion(e.target.value)}/>
             </Form.Group>
             <Form.Group controlId="formGridCity">
-              <Form.Control placeholder="Localidad" />
+              <Form.Control placeholder="Localidad" required onChange={(e)=>setLocalidadSuscripcion(e.target.value)} />
             </Form.Group>
             <Form.Group controlId="formGridZip">
-              <Form.Control placeholder="Código Postal" />
+              <Form.Control placeholder="Código Postal" required onChange={(e)=>setCodigoPostalSuscripcion(e.target.value)}/>
             </Form.Group>
             <Form.Group controlId="formGridNumber">
-              <Form.Control placeholder="Teléfono" />
+              <Form.Control placeholder="Teléfono" required onChange={(e)=>setTelefonoSuscripcion(e.target.value)} />
             </Form.Group>
             <Form.Group controlId="formGridEmail">
-              <Form.Control type="email" placeholder="Ingresa tu Email" />
+              <Form.Control type="email" placeholder="Ingresa tu Email" required onChange={(e)=>setEmailSuscripcion(e.target.value)}/>
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={exitoSuscripcion}>
+            <Button variant="primary" type="submit" >
               Enviar
             </Button>
           </Form>
